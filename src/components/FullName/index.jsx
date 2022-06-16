@@ -1,7 +1,6 @@
-import "./FullName.css"
+import './FullName.css'
 
-export default function FullName(props){
-    return(
-       <p>{firstName} {lastNme}</p>
-    )
-}
+export default function FullName({ firstName, lastName }) {
+    return (
+        <p>{firstName} {lastName}</p>
+    )}
