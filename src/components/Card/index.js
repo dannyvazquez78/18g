@@ -21,4 +21,3 @@ export default function Card({ photoURL, firstName, lastName, age, gender }) {
     </div>
   );
 }
-
