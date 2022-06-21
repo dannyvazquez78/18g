@@ -1,15 +1,9 @@
 import { useState } from "react";
 
-import "./App.css";
+// Components
+import Card from "./components/Card";
 
-function CardItemContent({ title, text }) {
-  return (
-    <div className="card-item-content">
-      <p className="title">{title}</p>
-      <p className="content">{text}</p>
-    </div>
-  );
-}
+import "./App.css";
 
 function App() {
   const [itemActive, setItemActive] = useState(null);
@@ -22,57 +16,41 @@ function App() {
       lastName: "Vera",
       age: 24,
       gender: "m",
-      photoURL: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      photoURL: "https://sgame.etsisi.upm.es/pictures/18253.jpg?1621958969/",
     },
     {
-      firstName: "Kim",
-      lastName: "Lee Anderson",
+      firstName: "Nestor",
+      lastName: "Ramírez",
       age: 40,
-      gender: "F",
-      photoURL: "https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      gender: "m",
+      photoURL: "https://sgame.etsisi.upm.es/pictures/18253.jpg?1621958969/",
     },
     {
       firstName: "David",
       lastName: "Romero",
       age: 28,
       gender: "m",
-      photoURL: "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      photoURL: "https://sgame.etsisi.upm.es/pictures/18253.jpg?1621958969/",
     },
     {
       firstName: "Yusef",
       lastName: "Lopéz",
       age: 40,
       gender: "f",
-      photoURL: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      photoURL: "https://media4.giphy.com/media/5sYyfIMRcpJWNqdySh/giphy.gif",
     },
   ];
 
   const kodersUI = koders.map(
     ({ firstName, lastName, age, gender, photoURL }, index) => (
-      <div key={index} className="card-container">
-        <div className="card-image-container">
-          <img alt="profile" src={photoURL} className="card-image" />
-        </div>
-        <div className="card-content">
-          <CardItemContent title="Nombre" text={`${firstName} ${lastName}`} />
-          <CardItemContent title="Edad" text={age} />
-          <CardItemContent
-            title="Gender"
-            text={gender === "m" ? "Masculino" : "Femenino"}
-          />
-
-          {/* <div className="card-item-content">
-            <p className="title">Edad</p>
-            <p className="content">{age}</p>
-          </div>
-          <div className="card-item-content">
-            <p className="title">Gender</p>
-            <p className="content">
-              {gender === "m" ? "Masculino" : "Femenino"}
-            </p>
-          </div> */}
-        </div>
-      </div>
+      <Card
+        key={index}
+        photoURL={photoURL}
+        firstName={firstName}
+        lastName={lastName}
+        age={age}
+        gender={gender}
+      />
     )
   );
 
