@@ -1,5 +1,6 @@
 // Components
 import Card from "./components/Card";
+//import Form from "./components/Form";
 
 import "./App.css";
 import { useState } from "react";
@@ -10,6 +11,8 @@ function App() {
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [photoURL, setPhotoURL] = useState("");
+
+  const [pesos, tipoCambio] = useState(0);
 
   const [koders, setKoders] = useState([
     {
@@ -67,6 +70,11 @@ function App() {
     setPhotoURL("");
   };
 
+  // const convertMoney = (event) => {
+  //   event.preventDefault();
+  //   console.log("work");
+  // };
+
   console.log(koders, "KODERS");
 
   return (
@@ -94,6 +102,14 @@ function App() {
         />
         <button type="submit">Agregar Koder</button>
       </form>
+      <div>
+        <p>{pesos * 20.23 + " es tu valor en pesos"}</p>
+        <input name="valor"
+         placeholder="ingresa la cantidad en pesos"
+          value={pesos}
+          onChange={(event) => tipoCambio(event.target.value)}
+        />
+      </div>
     </div>
   );
 }
