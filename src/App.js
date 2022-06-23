@@ -1,6 +1,5 @@
 // Components
 import Card from "./components/Card";
-//import Form from "./components/Form";
 
 import "./App.css";
 import { useState } from "react";
@@ -11,8 +10,7 @@ function App() {
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [photoURL, setPhotoURL] = useState("");
-
-  const [pesos, tipoCambio] = useState(0);
+  const [amount, setAmount] = useState(null);
 
   const [koders, setKoders] = useState([
     {
@@ -70,12 +68,10 @@ function App() {
     setPhotoURL("");
   };
 
-  // const convertMoney = (event) => {
-  //   event.preventDefault();
-  //   console.log("work");
-  // };
-
   console.log(koders, "KODERS");
+
+  const [peso, cambioPesos] = useState(0);
+  const [dolar, cambioDolar] = useState(0);
 
   return (
     <div className="App">
@@ -84,6 +80,7 @@ function App() {
       </div>
       <form onSubmit={handleSubmit}>
         <input
+          placeholder="First name"
           value={firstName}
           onChange={(event) => setFirstName(event.target.value)}
         />
@@ -102,16 +99,23 @@ function App() {
         />
         <button type="submit">Agregar Koder</button>
       </form>
+
       <div>
-        <p>{pesos * 20.23 + " es tu valor en pesos"}</p>
-        <input name="valor"
-         placeholder="ingresa la cantidad en pesos"
-          value={pesos}
-          onChange={(event) => tipoCambio(event.target.value)}
-        />
+      <input type="number" placeholder={peso.toFixed(2) + " pesos"}
+        onChange={(event) => cambioDolar(Number(event.target.value) / 20.18)}></input>
+         <input type="number" placeholder={dolar.toFixed(2) + " dolares"}
+        onChange={(event) => cambioPesos(Number(event.target.value) * 20.18)}></input>
+
       </div>
     </div>
   );
 }
 
 export default App;
+
+// 1. El usuario escribe la cantidad NUMERICA EN PESOS MEXICANOS en el input
+// 3. Se renderiza el valor en dolares
+
+// Notas:
+// El input no puede recibir letras solo numeros
+// El output tiene que estar formateado a dos decimales
