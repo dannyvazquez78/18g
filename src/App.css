@@ -1,17 +1,12 @@
-
-body {
-  background-color: lightblue;
-}
-
-nav {
+html,
+body,
+#root {
+  height: 100%;
   width: 100%;
-  background-color: rgb(0, 57, 149);
-  font-size: large;
-  padding: 10px;
 }
 
-nav > a {
-  color: white;
-  text-decoration: none;
-  margin: 2px 4px;
+.App {
+  height: 100%;
+  width: 100%;
+  background-color: white;
 }
