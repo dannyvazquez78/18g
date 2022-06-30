@@ -48,3 +48,16 @@ export const update = async (id, body) => {
   const data = await response.json();
   return data;
 };
+
+export const onDelete = (id) => {
+  
+  `https://kodemia-18g-default-rtdb.firebaseio.com/${id}.json`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "Application/JSON",
+      },
+      
+    };
+ 
+};
