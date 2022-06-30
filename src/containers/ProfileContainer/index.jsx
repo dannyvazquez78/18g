@@ -6,11 +6,11 @@ import "./ProfileContainer.css";
 export default function ProfileContainer() {
   return (
     <div className="Profile-container">
-      <h1>Profile</h1>
+      <h1>Profiles</h1>
       <div className="Profile-nav">
         <nav>
-          <Link to="">Detalle</Link>
-          <Link to="edit">Edit</Link>
+          <Link to="create">Create</Link>
+          <Link to="Edit">Edit</Link>
         </nav>
       </div>
       <Outlet />
